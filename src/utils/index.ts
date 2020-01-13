@@ -33,7 +33,7 @@ export function ensureRelation<T extends RelationshipsContract> (
  */
 export function ensureValue (collection: any, key: string, missingCallback: () => void) {
   const value = collection[key]
-  if (value === undefined || value === null) {
+  if (value === undefined) {
     missingCallback()
     return
   }

@@ -1268,8 +1268,8 @@ export class BaseModel implements ModelContract {
 
       const value = this.$preloaded[key]
       results[relation.serializeAs] = Array.isArray(value)
-        ? value.map((one) => one.toJSON())
-        : value.toJSON()
+        ? value.map((one) => one ? one.toJSON() : null)
+        : value ? value.toJSON() : null
     })
 
     /**

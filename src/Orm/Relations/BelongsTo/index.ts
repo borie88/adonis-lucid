@@ -101,11 +101,8 @@ ModelConstructorContract
     related: ModelContract | null
   ): void {
     ensureRelationIsBooted(this)
-    if (!related) {
-      return
-    }
 
-    parent.$setRelated(this.relationName as any, related)
+    parent.$setRelated(this.relationName as any, related || null)
   }
 
   /**
@@ -116,11 +113,8 @@ ModelConstructorContract
     related: ModelContract | null
   ): void {
     ensureRelationIsBooted(this)
-    if (!related) {
-      return
-    }
 
-    parent.$setRelated(this.relationName as any, related)
+    parent.$setRelated(this.relationName as any, related || null)
   }
 
   /**
